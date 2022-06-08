@@ -14,3 +14,17 @@ All outbound traffic is permitted.
 
 SSH access is permitted from bastion host.
 VictoriaMetrics exposes API at port 8428 and is accessible from within the VPC.
+
+# Modules
+
+The project consists of the following modules:
+- foundation,
+- victoriametrics.
+
+## Foundation module
+
+Foundation module acts as a bridge between the environment and existing resources and specific modules. It serves a similar purpose to Terraform remote state. Terraform remote state has its caveats and is not always easily accessible.
+
+## VictoriaMetrics module
+
+VictoriaMetrics module defines everything necessary to run VictoriaMetrics: IAM policy, role, instance profile, persistent EBS drive and auto-scaling group (with size = 1).

@@ -15,6 +15,7 @@ provider "aws" {
 }
 
 data "aws_default_tags" "this" {}
+
 module "foundation" {
   source          = "./modules/foundation"
   vpc_id          = var.vpc_id
